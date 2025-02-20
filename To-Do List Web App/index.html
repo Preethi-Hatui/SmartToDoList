@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart To‑Do List</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>📝 Smart To‑Do List</h1>
+    <button id="toggleThemeBtn" class="theme-btn">🌗 Toggle Theme</button>
+  </header>
+
+  <div class="container">
+    <!-- Left Panel: Add Task Form -->
+    <div class="left-panel">
+      <h2>✍️ Add New Task</h2>
+      <form id="addTaskForm">
+        <input type="text" id="taskInput" placeholder="📝 Enter task description" required />
+        <div class="datetime-group">
+          <input type="datetime-local" id="dueDate" placeholder="📅 Set due date" />
+          <select id="priority">
+            <option value="Low">🟢 Low Priority</option>
+            <option value="Medium">🟡 Medium Priority</option>
+            <option value="High">🔴 High Priority</option>
+          </select>
+        </div>
+        <button type="submit" id="addTaskButton">✔ Add Task</button>
+      </form>
+    </div>
+
+    <!-- Right Panel: Active Tasks & History -->
+    <div class="right-panel">
+      <div class="controls">
+        <input type="text" id="searchInput" placeholder="🔍 Search tasks..." />
+        <select id="sortTasks">
+          <option value="date">📅 Sort by Date</option>
+          <option value="priority">⚡ Sort by Priority</option>
+          <option value="name">🔤 Sort by Name</option>
+        </select>
+      </div>
+      <h2>✅ Active Tasks</h2>
+      <ul id="taskList"></ul>
+      <button id="clearTasksBtn" class="clear-btn">🗑 Clear All Tasks</button>
+      <hr>
+      <button id="toggleHistoryBtn" class="toggle-btn">📜 Show Task History</button>
+      <div id="historySection" class="hidden">
+        <h2>🗃 Task History</h2>
+        <ul id="historyList"></ul>
+        <button id="clearHistoryBtn" class="clear-btn">🗑 Clear History</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
